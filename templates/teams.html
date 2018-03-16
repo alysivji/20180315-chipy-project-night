@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <table>
+      {% for team in teams %}
+      <tr>
+        Team:  {{ loop.index }}
+      </tr>
+        <table>
+          {% for name, line in team.items() %}
+          <tr>
+            <td>{{ name }}</td>
+            <td>
+                {{ line or 0 }}
+            </td>
+            <td>
+                <img src="{{ member_rsvps[name] }}" />
+            </td>
+          </tr>
+          {%endfor%}
+        </table>
+    {%endfor%}
+  </table>
+  </body>
+</html>
